@@ -1,0 +1,33 @@
+.container {
+	margin-top: 100px;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.btn-lg {
+	width: 60px;
+	height: 60px;
+	margin: 1px;
+}
+
+.calculator {
+	width: 290px;
+	margin: auto;
+	background-color: #707070;
+	box-shadow: 5px 5px 5px;
+	border: 2px solid gray;
+	border-radius: 10px;
+}
+
+.display {
+	border: 1px solid black;
+	border-radius: 2px 2px 2px 2px;
+	text-align: right;
+	padding: 10px;
+	margin-bottom: 20px;	
+	background-color: #00CC99;
+	color: yellow;
+}
