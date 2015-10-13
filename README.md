@@ -6,3 +6,8 @@ Current features:
   - Calculate total for two or more numbers (operators +, -, *, /) and show result in display.
   - Use calculated total as a number for next calculation.
   - Disable and enable buttons depending on previous input to ensure valid input. 
+
+TODO:
+  - Add reset button
+  - Support negative numbers
+  - UI changes for buttons.
