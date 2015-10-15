@@ -110,9 +110,7 @@
 					this.state.currentNumber = clickedNumber;
 				}
 				else {
-					if(!this.isOperator(clickedNumber)){
-						this.state.currentNumber += clickedNumber;
-					}
+					this.state.currentNumber += clickedNumber;
 				}
 			}
 
@@ -136,10 +134,15 @@
 				this.state.selections.push(clickedNumber);
 			}
 
-			if(this.isDecimalSign(clickedNumber) && this.state.currentNumber == null){
+			if(this.isDecimalSign(clickedNumber)){
 				console.log("HandleInput: decimal sign");
-				clickedNumber = "0"+clickedNumber;
-				this.state.currentNumber = clickedNumber;
+				if(this.state.currentNumber == null){
+					clickedNumber = "0"+clickedNumber;
+					this.state.currentNumber = clickedNumber;
+				}
+				else{
+					this.state.currentNumber += clickedNumber;
+				}
 			}
 
 			console.log("currentNumber: "+this.state.currentNumber);
@@ -212,10 +215,14 @@
 		},
 		updateDisplay: function(clickedNumber){
 			if(!this.isEqualSign(clickedNumber)){
-				if(this.state.displayValue == "0"){
+				// When first input is entered, replace initial value '0' with entered number.
+				console.log("updateDisplay: selections: "+this.state.selections+" displayValue: "+this.state.displayValue);
+				if(this.state.selections.length == 0 && this.state.displayValue == '0' && !this.isDecimalSign(clickedNumber)){
+					console.log("updateDisplay: Replace initial value");
 					this.setState({displayValue: clickedNumber});				
 				}
 				else{
+					console.log("updateDisplay: Add to existing value");
 					this.setState({displayValue: this.state.displayValue += clickedNumber});
 				}
 			}

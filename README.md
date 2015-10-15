@@ -9,5 +9,6 @@ Current features:
 
 TODO:
   - Add reset button
-  - Support negative numbers
+  - Add backspace button to remove input
+  - Add +/- button for switching sign of the number
   - UI changes for buttons.
